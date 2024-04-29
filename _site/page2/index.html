@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+		
+			
+			<title> - Dev Cow's Documents</title>
+		
+
+    <!-- Tailwind CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	</head>
+	<body>
+    <nav id="navbar" class="bg-white fixed w-full z-20 top-0 start-0">
+    <div class="container mx-auto px-6 py-3 flex flex-wrap items-center justify-between">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <span id="site-title" class="bg-transparent self-center text-2xl font-semibold whitespace-nowrap">Dev Cow's Documents</span>
+        </a>
+        <button id="hamburger-btn", data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-8 h-8 hover:text-purple-900 justify-center rounded-lg md:hidden" aria-controls="navbar-solid-bg" aria-expanded="false">
+            <i id="menu-icon" class="fas fa-bars"></i>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+            <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+                
+                    <li>
+                    <a class="block py-2 px-3 md:p-0 rounded md:border-0 hover:text-purple-900" href="/" >Blog</a>
+                    </li>
+                
+                    <li>
+                    <a class="block py-2 px-3 md:p-0 rounded md:border-0 hover:text-purple-900" href="/publification.html" >Publification</a>
+                    </li>
+                
+                    <li>
+                    <a class="block py-2 px-3 md:p-0 rounded md:border-0 hover:text-purple-900" href="/about.html" >About</a>
+                    </li>
+                
+                <li>
+                <span class="block py-2 px-3 md:p-0 rounded hover:text-purple-900 md:border-0 "> <button id="theme-toggle" class="rounded-lg md:block"> <i id="theme-icon" class="fas fa-moon"></i> </button> </span>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navItems = document.querySelectorAll('#navbar-solid-bg ul li a');
+        var currentPage = window.location.pathname;
+
+        navItems.forEach(function(item) {
+            if (item.getAttribute('href') === currentPage) {
+                item.classList.add('current');
+            }
+        });
+
+        var hamburgerButton = document.getElementById('hamburger-btn');
+        var navMenu = document.getElementById('navbar-solid-bg');
+
+        hamburgerButton.addEventListener('click', function() {
+            navMenu.classList.toggle('hidden');
+        });
+    });
+
+    var hamburgerButton = document.getElementById('hamburger-btn');
+    var navMenu = document.getElementById('navbar-solid-bg');
+    var menuIcon = document.getElementById('menu-icon');
+
+    hamburgerButton.addEventListener('click', function() {
+        navMenu.classList.toggle('block');
+        if (navMenu.classList.contains('block')) {
+            menuIcon.className ='fas fa-times';
+        } else {
+            menuIcon.className ='fas fa-bars';
+        }
+    });
+
+    var themeToggle = document.getElementById('theme-toggle');
+    var themeIcon = document.getElementById('theme-icon');
+    var body = document.body;
+
+    // 페이지 로드 시 저장된 테마 모드를 적용
+    var savedThemeMode = localStorage.getItem('themeMode');
+    if (savedThemeMode === 'dark') {
+        body.classList.add('dark');
+        themeIcon.className = 'fas fa-sun';
+    }
+
+    themeToggle.addEventListener('click', function() {
+        // 테마 모드 변경
+        body.classList.toggle('dark');
+        if (body.classList.contains('dark')) {
+            themeIcon.className = 'fas fa-sun';
+            // 테마 모드를 localStorage에 저장
+            localStorage.setItem('themeMode', 'dark');
+        } else {
+            themeIcon.className = 'fas fa-moon';
+            // 테마 모드를 localStorage에 저장
+            localStorage.setItem('themeMode', 'light');
+        }
+    });
+
+</script>
+
+    <main class="container mx-auto min-h-screen items-center px-5 px-0 mt-20 flex-grow">
+      <h2 class="text-3xl m-2 mb-3"> <i class="fas fa-terminal text-green-900"></i> Blog;</h2>
+<img class="w-full h-32 rounded-lg mx-auto mb-6 object-cover" src="/assets/img/blog-img.jpg" alt="Profile picture">
+<hr>
+
+
+<div class="content">
+    <article class="article  article--page  typeset">
+        
+        <h1></h1>
+        
+
+    </article>
+
+    
+
+  <ul>
+    
+      <li class="mb-1 bg-white border-b p-4">
+        <article class="article  article--post  typeset">
+
+          <h2><a href="/blog/2024/hello_world-copy" class="text-lg">What was Wayne's World?</a></h2>
+          
+
+<small class="small  post-meta">
+  <span><i class="fas fa-hashtag px-1"></i> 
+    
+      <span class="label  label--category">General</span>
+    
+  &nbsp;&middot;&nbsp;</span>
+  <time datetime="2024-01-05T00:00:00+09:00" class="time"><i class="far fa-calendar-alt px-1"></i>05 Jan 2024&nbsp;&middot;&nbsp;</time>
+  <span><i class="far fa-clock px-1"></i> 0 min</span>
+</small>
+          <!-- <p>Wayne’s World is a 1992 comedy film directed by Penelope Spheeris and starring Mike Myers as Wayne Campbell and Dana Carvey as Garth Algar. The film was adapted from a sketch of the same name on NBC’s Saturday Night Live.</p>
+
+ -->
+
+        </article>
+      </li>
+    
+      <li class="mb-1 bg-white border-b p-4">
+        <article class="article  article--post  typeset">
+
+          <h2><a href="/blog/2024/hello_world" class="text-lg">What was Wayne's World?</a></h2>
+          
+
+<small class="small  post-meta">
+  <span><i class="fas fa-hashtag px-1"></i> 
+    
+      <span class="label  label--category">General</span>
+    
+  &nbsp;&middot;&nbsp;</span>
+  <time datetime="2024-01-01T00:00:00+09:00" class="time"><i class="far fa-calendar-alt px-1"></i>01 Jan 2024&nbsp;&middot;&nbsp;</time>
+  <span><i class="far fa-clock px-1"></i> 0 min</span>
+</small>
+          <!-- <p>Wayne’s World is a 1992 comedy film directed by Penelope Spheeris and starring Mike Myers as Wayne Campbell and Dana Carvey as Garth Algar. The film was adapted from a sketch of the same name on NBC’s Saturday Night Live.</p>
+
+ -->
+
+        </article>
+      </li>
+    
+  </ul>
+  <nav class="flex justify-between items-center rounded-lg mt-3 w-full text-sm">
+
+    
+      <a href="/" class="rounded-lg border p-1 hover:bg-green-800 text-center hover:text-white text-center" style="width: 100px;">&larr; Previous</a>
+    
+  
+    <span class="flex-grow text-center rounded-lg border mx-2 p-1">Page: 2 of 2</span>
+  
+    
+      <span class="rounded-lg border p-1 text-gray-500 text-center " style="width: 100px;">Next &rarr;</span>
+    
+  
+</nav>
+
+
+</div>
+
+
+    </main>
+		<footer class="w-full mb-3 mt-10">
+    <div class="flex items-center">
+        <hr class="flex-grow border-t-2">
+        <span class="px-2 text-xs">meobeo</span>
+        <hr class="flex-grow border-t-2">
+      </div>
+    <div class="container mx-auto px-4 py-2">
+        
+        <div class="flex justify-between items-center">
+        <div>
+            <h3 class="text-lg font-bold">Dev Cow's Documents</h3>
+            <p class="mt-2 text-sm text-gray-500">&copy;2024 Dev Cow. All rights reserved.</p>
+        </div>
+        <div>
+            <ul class="flex items-center space-x-4">
+                <li>
+                    <a href="mailto:seokhun.jeon@keti.re.kr" class="text-gray-500 text-sm"><i class="far fa-envelope"></i> Contact</a>
+                </li>
+                <li>
+                    <a href="https://github.com/devcow-arxiv" class="text-gray-500 text-sm"><i class="fab fa-github"></i> Github</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+
+		<!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700|Neuton:400,700" rel="stylesheet"> -->
+	</body>
+</html>

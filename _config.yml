@@ -8,7 +8,17 @@ plugins:
 paginate: 5 # jekyll-paginate > items per page
 paginate_path: page:num # jekyll-paginate > blog page
 
+
+related_blog_posts:
+  enabled: true
+  max_related: 3
+
 # 6. Jekyll collections settings
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:title
+
 defaults:
   -
     scope:
@@ -19,5 +29,6 @@ defaults:
 
 sass:
   style: compressed # Style compression
+
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
 timezone: Asia/Seoul # Timezone for blog posts and alike
