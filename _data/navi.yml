@@ -1,0 +1,6 @@
+- name: Blog
+  link: /
+- name: Publification
+  link: /publification.html
+- name: About
+  link: /about.html

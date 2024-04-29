@@ -1,0 +1,13 @@
+<div class="navigation-links mt-3 flex justify-between">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="previous-post rounded-lg border p-2 hover:bg-green-800 hover:text-white">
+        &larr; {{ page.previous.title }}
+    </a>
+    {% endif %}
+    
+    {% if page.next %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="previous-post rounded-lg border p-2 hover:bg-green-800 hover:text-white">
+        {{ page.next.title }} &rarr;
+    </a>
+    {% endif %}
+</div>

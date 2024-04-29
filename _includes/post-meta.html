@@ -1,0 +1,17 @@
+{% if page.categories %}
+  {% capture categories %}
+    {% for category in page.categories %}
+      <span class="label  label--category">{{ category }}</span>{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  {% endcapture %}
+{% elsif page.category %}
+  {% capture categories %}
+    <span class="label  label--category">{{ page.category }}</span>
+  {% endcapture %}
+{% endif %}
+
+<small class="small  post-meta">
+  <span><i class="fas fa-hashtag px-1"></i> {{ categories | append: "&nbsp;&middot;&nbsp;" }}</span>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="time"><i class="far fa-calendar-alt px-1"></i>{{ page.date | date_to_string | append: "&nbsp;&middot;&nbsp;" }}</time>
+  <span><i class="far fa-clock px-1"></i> {% if page.content.size < 360 %}1{% else %}{{ page.content.size | divided_by:1800 }}{% endif %} min</span>
+</small>

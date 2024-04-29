@@ -1,0 +1,17 @@
+<nav class="flex justify-between items-center rounded-lg mt-3 w-full text-sm">
+
+    {% if paginator.previous_page %}
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="rounded-lg border p-1 hover:bg-green-800 text-center hover:text-white text-center" style="width: 100px;">&larr; Previous</a>
+    {% else %}
+      <span class="rounded-lg border p-1 text-gray-500 text-center " style="width: 100px;">&larr; Previous</span>
+    {% endif %}
+  
+    <span class="flex-grow text-center rounded-lg border mx-2 p-1">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  
+    {% if paginator.next_page %}
+      <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="rounded-lg border p-1 hover:bg-green-800 hover:text-white text-center" style="width: 100px;">Next &rarr;</a>
+    {% else %}
+      <span class="rounded-lg border p-1 text-gray-500 text-center " style="width: 100px;">Next &rarr;</span>
+    {% endif %}
+  
+</nav>

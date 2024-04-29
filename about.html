@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<h2 class="text-3xl m-2 mb-3"> <i class="fas fa-terminal text-green-900"></i> About DevCow;</h2>
+<img class="w-full h-32 rounded-lg mx-auto mb-6 object-cover" src="{{ site.baseurl }}/assets/img/about-img.jpg" alt="Profile picture">
+<hr>
+
+<div>
+    <div class="m-3 flex flex-col md:flex-row">
+        <img class="w-48 h-48 rounded-xl object-cover shadow mx-auto md:mr-3 md:mt-11" src="assets/img/profile.png" alt="DevCow">
+        <div class="w-full">
+            <h2 class="text-xl font-semibold p-2">Career</h2>
+            {% for career in site.data.career %}
+                <div class="group mb-1 p-2 rounded-xl border text-sm hover:border-green-900">
+                    <div class="text-xs space-x-5"><i class="far fa-calendar"></i> {{career.period}} <i class="far fa-folder"></i> {{career.position}}</div>
+                    <div class="font-bold"> >> {{career.company}} </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="m-3">
+        <h2 class="text-xl font-semibold p-2"> Research Area </h2>
+        <div class="p-3 space-x-1">
+            <span class="p-2 mb-2 rounded-lg text-xs text-green bg-green-200"> LLM </span>
+            <span class="p-2 rounded-lg text-xs text-green bg-green-400"> Edge-ML </span>
+            <span class="p-2 rounded-lg text-xs text-white bg-green-500"> MLOPS </span>
+            <span class="p-2 rounded-lg text-xs text-white bg-green-600"> Quantum Computer </span>
+            <span class="p-2 rounded-lg text-xs text-white bg-green-800"> Computer Simulation </span>
+            <span class="p-2 rounded-lg text-xs text-white bg-green-900"> PIM </span>
+        </div>
+    </div>
+        
+    <div class="m-3">
+        <h2 class="text-xl font-semibold p-2"> Bio </h2>
+        <p class="rounded-xl border p-3 hover:border-green-900">
+            Hello, I'm <a class="font-bold">Dev Cow</a>, an AI software and algorithm specialist 
+            with a keen focus on co-design perspectives of various AI models. 
+            I am currently engrossed in the deployment optimization of these models, 
+            ensuring seamless integration with hardware. My recent endeavors involve 
+            intensive research on the processing in memory (PIM) of large language models, 
+            a fascinating area that has captured my interest. 
+            Moreover, I harbor a growing curiosity for Quantum Computing software, 
+            a field I believe holds immense potential for the future. 
+            Join me as I dive deep into the coding abyss, unraveling the mysteries of 
+            AI and quantum computing.
+        </p>
+    </div>
+
+</div>

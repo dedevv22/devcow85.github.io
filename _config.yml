@@ -1,0 +1,23 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Dev Cow's Documents" # the name of your site, e.g. ACME Corp.
+
+plugins:
+- jekyll-paginate
+
+paginate: 5 # jekyll-paginate > items per page
+paginate_path: page:num # jekyll-paginate > blog page
+
+# 6. Jekyll collections settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post # Default layout
+
+sass:
+  style: compressed # Style compression
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Asia/Seoul # Timezone for blog posts and alike

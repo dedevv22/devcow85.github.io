@@ -1,0 +1,23 @@
+{% assign current_url = page.url %}
+
+{% assign related_posts = site.posts | where_exp: "post", "post.categories contains page.categories.first" | limit: 3 %}
+{% if related_posts.size > 0 %}
+    <div class="mt-3 mb-3">
+        {% if related_posts.size > 1 %}
+            
+            <h3 class="text-xl font-bold mt-3 mb-3">Related Posts</h3>
+        {% endif %}
+        <ul class="list-disc list-inside">
+            {% for related_post in related_posts %}
+                {% assign related_url = related_post.url %}
+                {% unless related_url == current_url %}
+                    <li class="rounded-lg border p-2 mb-1 text-sm">
+                        <a href="{{ related_post.url }}" class="text-green-700 hover:underline">{{ related_post.title | truncate: 50  }}</a>
+                        <time datetime="{{ related_post.date | date_to_xmlschema }}" class="time"><i class="far fa-calendar-alt px-1"></i>{{ related_post.date | date_to_string}}</time>
+                        <span><i class="far fa-clock px-1"></i> {% if related_post.content.size < 360 %}1{% else %}{{ related_post.content.size | divided_by:1800 }}{% endif %} min</span>
+                    </li>
+                {% endunless %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

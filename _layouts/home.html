@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h2 class="text-3xl m-2 mb-3"> <i class="fas fa-terminal text-green-900"></i> Blog;</h2>
+<img class="w-full h-32 rounded-lg mx-auto mb-6 object-cover" src="{{ site.baseurl }}/assets/img/blog-img.jpg" alt="Profile picture">
+<hr>
+
+
+<div class="content">
+    <article class="article  article--page  typeset">
+        {% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
+        <h1>{{ collectiondata.title }}</h1>
+        {{ collectiondata.description | markdownify }}
+    </article>
+
+    {% include post-list.html %}
+</div>
+

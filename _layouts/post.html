@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article class="m-1">
+
+    <h1 class="text-2xl font-bold mb-1">{{ page.title }}</h1>
+    <div class="mb-2"> {% include post-meta.html %} </div>
+    <hr>
+    <div class="m-2">
+        {{ content }}
+    </div>
+
+</article>
+
+<hr>
+<div class="mb-3 mt-3">
+    {% include post-move.html %} 
+</div>
+<hr>
+<div class="mb-3 mt-3">
+    {% include post-related.html %} 
+</div>
