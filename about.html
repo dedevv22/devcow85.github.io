@@ -8,7 +8,9 @@ layout: default
 
 <div>
     <div class="m-3 flex flex-col md:flex-row">
-        <img class="w-48 h-48 rounded-xl object-cover shadow mx-auto md:mr-3 md:mt-11" src="assets/img/profile.png" alt="DevCow">
+        <a class="mx-auto md:mr-3 md:mt-11" href="cv.html">
+            <img class="w-48 h-48 rounded-xl object-cover shadow " src="assets/img/profile.png" alt="DevCow">
+        </a>
         <div class="w-full">
             <h2 class="text-xl font-semibold p-2">Career</h2>
             {% for career in site.data.career %}
@@ -21,7 +23,6 @@ layout: default
     </div>
     <div class="m-3">
         <h2 class="text-xl font-semibold p-2"> Research Area </h2>
-        <hr>
         <div class="p-3 space-x-1">
             <span class="p-2 mb-2 rounded-lg text-xs text-green bg-green-200"> LLM </span>
             <span class="p-2 rounded-lg text-xs text-green bg-green-400"> Edge-ML </span>
@@ -30,7 +31,6 @@ layout: default
             <span class="p-2 rounded-lg text-xs text-white bg-green-800"> Computer Simulation </span>
             <span class="p-2 rounded-lg text-xs text-white bg-green-900"> PIM </span>
         </div>
-        <hr>
     </div>
         
     <div class="m-3">
